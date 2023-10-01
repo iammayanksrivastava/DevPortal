@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width initial-scale=1 shrink-to-fit=no")
+    title=title
+    link(rel="stylesheet" href="/styles/style.css")
+  body
+    if user
+      a(href="/") #{user.name}'s Profile
+      form(action="/authentication/sign-out", method="POST")
+        button Sign Out
+    else
+      a(href="/authentication/sign-in") Sign In
+      a(href="/authentication/sign-up") Sign Up
+    block content
+    script(src="/scripts/script.js")
